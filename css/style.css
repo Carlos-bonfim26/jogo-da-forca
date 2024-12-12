@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+:root{
+    --colorMain:#67AAF9;
+    --white:#FFFBFE;
+    --black:#0D0221;
+    --erro:#EE1B26;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--colorMain);
+}
+.container{
+    width: 53rem;
+    background-color: var(--white);
+    display: flex;
+    gap: 4rem;
+    align-items: flex-end;
+    padding: 3.75rem 2.5rem;
+    border-radius: 0.6rem;
+}
+.hanglman-box img{
+max-width: 16.8rem;
+}
+.hanglman-box h1{
+    font-size: 1.45rem;
+    margin-top: 1.25rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+.word-display{
+    display: flex;
+    list-style: none;
+   align-items: center;
+   justify-content: center;
+   gap: 0.6rem;
+}
+.word-display .letter{
+    width: 1.75rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 3px solid var(--black);
+    font-family: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+.word-display .letter.guessed{
+    border-color: transparent;
+    margin: -2.5rem 0 2.1px;
+}
+.game-box h4{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+.game-box h4 b{
+    font-weight: 600;
+}
+.game-box .guesses-text b{
+    color: var(--erro);
+}
+.game-box .keyboard{
+display: flex;
+gap: 0.4rem;
+flex-wrap: wrap;
+justify-content: center;
+margin-top: 2.5rem;
+}
+.keyboard button{
+width: calc(100% / 9 - 5px);
+font-weight: 600;
+font-size: 1.2rem;
+padding: 0.3rem;
+color: var(--white);
+background-color: var(--colorMain);
+transition: 0.5s ease;
+border: none;
+border-radius: 0.5rem;
+cursor: pointer;
+text-transform: uppercase;
+outline: none;
+}
+.keyboard button:hover{
+    opacity: 0.6;
+}
+.keyboard button[disabled]{
+color: transparent;
+background-color: transparent;
+cursor: auto;
+pointer-events: none;
+}
+.game-modal{
+    position: fixed;
+   left: 0;
+   top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 999;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.4s ease;
+}
+.game-modal.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+.game-modal .content{
+    background-color: var(--white);
+    max-width: 26rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    justify-content: center;
+    width: 100%;
+    padding: 0.8rem;
+   border-radius: 0.5rem;
+}
+.content button{
+    background-color: var(--colorMain);
+    font-weight: 600;
+    padding: 0.3rem;
+    margin-top: 0.7rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.5s ease-in;
+    border: 3px solid var(--black);
+}
+.content button:hover{
+    background-color: #67abf9a1;
+    
+}
+.game-modal img{
+    max-width: 8.1rem;
+}
+
+@media(max-width:782px){
+
+    .container{
+        flex-direction: column;
+        padding: 1.8rem 1rem;
+        align-items: center;
+    }
+    .hanglman-box img{
+        max-width: 12.5rem;
+    }
+    .hanglman-box h1{
+        display: none;
+    }
+}
+@media(max-width:315px){
+.keyboard button{
+    font-size: 0.8rem;
+}
+}
